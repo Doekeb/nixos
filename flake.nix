@@ -5,10 +5,10 @@
   inputs = {
     # UNSTABLE
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # home-manager = {
-    #   url = "github:nix-community/home-manager";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # stylix = {
     #   url = "github:nix-community/stylix";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -23,9 +23,13 @@
   outputs =
     {
       nixpkgs,
-      # stylix,
+      home-manager,
       ...
     }@inputs:
+    let
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+    in
     {
       nixosConfigurations = {
         lemur-pro = nixpkgs.lib.nixosSystem {
@@ -37,6 +41,13 @@
             # stylix.nixosModules.stylix
           ];
         };
+      };
+      homeConfigurations = {
+        "doeke" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./home-manager/home.nix ];
+        };
+
       };
     };
 }
