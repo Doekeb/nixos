@@ -35,19 +35,14 @@
         lemur-pro = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
-          modules = [
-            ./system
-            # home-manager.nixosModules.default
-            # stylix.nixosModules.stylix
-          ];
+          modules = [ ./system ];
         };
       };
       homeConfigurations = {
-        "doeke" = home-manager.lib.homeManagerConfiguration {
+        "doeke@lemur-pro" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./home-manager/home.nix ];
         };
-
       };
     };
 }

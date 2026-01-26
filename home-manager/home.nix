@@ -3,6 +3,7 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
+  imports = [ ./hyprland.nix ];
   home.username = "doeke";
   home.homeDirectory = "/home/doeke";
 
@@ -38,20 +39,26 @@
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-    ".config/foobar.txt".source =
-      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/dotfiles/.config/foobarbaz.txt";
+  home.file =
+    let
+      ln = config.lib.file.mkOutOfStoreSymlink;
+      "hd" = config.home.homeDirectory;
+    in
+    {
+      # # Building this configuration will create a copy of 'dotfiles/screenrc' in
+      # # the Nix store. Activating the configuration will then make '~/.screenrc' a
+      # # symlink to the Nix store copy.
+      # ".screenrc".source = dotfiles/screenrc;
+      ".config/foobar.txt".source = ln "${hd}/.config/nixos/dotfiles/.config/foobarbaz.txt";
 
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
+      # ".config/hypr".source = ln "${hd}/.config/nixos/dotfiles/.config/hypr";
+
+      # # You can also set the file content immediately.
+      # ".gradle/gradle.properties".text = ''
+      #   org.gradle.console=verbose
+      #   org.gradle.daemon.idletimeout=3600000
+      # '';
+    };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
