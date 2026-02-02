@@ -18,6 +18,7 @@
     ./fonts.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./hyprland.nix
     ./lsp.nix
     ./nautilus.nix
     ./neovim.nix
@@ -91,11 +92,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.hyprland = {
-    enable = true;
-    withUWSM = true;
-    # wayland.windowManager.hyprland.systemd.enable = false; # Uncomment if using home manager
-  };
   programs.waybar.enable = true;
   programs.nix-ld.enable = true;
 
@@ -116,8 +112,6 @@
 
     libnotify # Provides notify-send
 
-    hyprpaper
-    hyprlauncher
     tmux
     gitmux
     nwg-look # gtk theming
