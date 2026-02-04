@@ -3,7 +3,7 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  imports = [ ./hyprland.nix ];
+  # imports = [ ./hyprland.nix ];
   home.username = "doeke";
   home.homeDirectory = "/home/doeke";
 
@@ -51,7 +51,7 @@
       # ".screenrc".source = dotfiles/screenrc;
       ".config/foobar.txt".source = ln "${hd}/.config/nixos/dotfiles/.config/foobarbaz.txt";
 
-      # ".config/hypr".source = ln "${hd}/.config/nixos/dotfiles/.config/hypr";
+      ".config/hypr".source = ln "${hd}/.config/nixos/dotfiles/.config/hypr";
 
       # # You can also set the file content immediately.
       # ".gradle/gradle.properties".text = ''

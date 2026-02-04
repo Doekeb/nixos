@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   programs = {
     hyprland = {
@@ -7,4 +7,11 @@
       # wayland.windowManager.hyprland.systemd.enable = false; # Uncomment if using home manager
     };
   };
+  environment.systemPackages = with pkgs; [
+    hyprpaper
+    hyprpicker
+    hyprpolkitagent
+    hyprpwcenter
+    hyprsysteminfo
+  ];
 }
