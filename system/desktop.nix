@@ -1,9 +1,5 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = with pkgs; [
-    rofi
-  ];
-
   services.greetd = {
     enable = true;
     settings = {
