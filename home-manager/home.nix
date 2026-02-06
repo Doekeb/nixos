@@ -3,7 +3,11 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  # imports = [ ./hyprland.nix ];
+  imports = [
+    ./clipse.nix
+    ./cliphist.nix
+    ./rofi.nix
+  ];
   home.username = "doeke";
   home.homeDirectory = "/home/doeke";
 
