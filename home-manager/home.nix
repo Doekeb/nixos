@@ -11,6 +11,7 @@
     ./firefox.nix
     ./htop.nix
     ./rofi.nix
+    ./zoom.nix
   ];
   home.username = "doeke";
   home.homeDirectory = "/home/doeke";
