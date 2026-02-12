@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     bat
-    btop
     duckdb
     eza
     fd
