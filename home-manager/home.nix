@@ -8,6 +8,7 @@
     ./cliphist.nix
     ./clipse.nix
     ./cli-tools.nix
+    ./htop.nix
     ./rofi.nix
   ];
   home.username = "doeke";

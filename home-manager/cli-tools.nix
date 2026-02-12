@@ -6,7 +6,6 @@
     eza
     fd
     fzf
-    htop
     jq
     ripgrep
     uv
