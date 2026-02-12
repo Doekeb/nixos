@@ -21,9 +21,9 @@
     ./lsp.nix
     ./nautilus.nix
     ./neovim.nix
-    ./shells.nix
     ./users.nix
     ./zoom-us.nix
+    ./zsh.nix
   ];
 
   # stylix = {

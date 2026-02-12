@@ -12,6 +12,7 @@
     ./fish.nix
     ./htop.nix
     ./mongodb-compass.nix
+    ./nushell.nix
     ./rofi.nix
     ./slack.nix
   ];
