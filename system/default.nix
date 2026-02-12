@@ -23,6 +23,7 @@
     ./neovim.nix
     ./shells.nix
     ./users.nix
+    ./zoom-us.nix
   ];
 
   # stylix = {

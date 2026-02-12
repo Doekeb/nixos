@@ -13,7 +13,6 @@
     ./mongodb-compass.nix
     ./rofi.nix
     ./slack.nix
-    ./zoom-us.nix
   ];
   home.username = "doeke";
   home.homeDirectory = "/home/doeke";
