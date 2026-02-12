@@ -5,9 +5,10 @@
   # manage.
   imports = [
     ./btop.nix
+    ./cli-tools.nix
     ./cliphist.nix
     ./clipse.nix
-    ./cli-tools.nix
+    ./firefox.nix
     ./htop.nix
     ./rofi.nix
   ];
