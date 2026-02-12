@@ -4,8 +4,9 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   imports = [
-    ./clipse.nix
     ./cliphist.nix
+    ./clipse.nix
+    ./cli-tools.nix
     ./rofi.nix
   ];
   home.username = "doeke";
