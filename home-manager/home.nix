@@ -10,8 +10,10 @@
     ./clipse.nix
     ./firefox.nix
     ./htop.nix
+    ./mongodb-compass.nix
     ./rofi.nix
-    ./zoom.nix
+    ./slack.nix
+    ./zoom-us.nix
   ];
   home.username = "doeke";
   home.homeDirectory = "/home/doeke";
