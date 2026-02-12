@@ -9,6 +9,7 @@
     ./cliphist.nix
     ./clipse.nix
     ./firefox.nix
+    ./fish.nix
     ./htop.nix
     ./mongodb-compass.nix
     ./rofi.nix
