@@ -21,7 +21,6 @@
     ./lsp.nix
     ./nautilus.nix
     ./neovim.nix
-    ./notion-app.nix
     ./programs.nix
     ./shells.nix
     ./users.nix
