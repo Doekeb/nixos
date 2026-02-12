@@ -13,7 +13,6 @@
   imports = [
     # inputs.home-manager.nixosModules.default
     # inputs.stylix.nixosModules.stylix
-    ./cli-tools.nix
     ./desktop.nix
     ./fonts.nix
     # Include the results of the hardware scan.
