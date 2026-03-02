@@ -7,6 +7,7 @@
     fd
     fzf
     jq
+    poetry
     ripgrep
     uv
     yq
