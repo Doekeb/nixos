@@ -11,6 +11,7 @@
     ./firefox.nix
     ./fish.nix
     ./htop.nix
+    ./lsp.nix
     ./mongodb-compass.nix
     ./nushell.nix
     ./rofi.nix

@@ -18,7 +18,6 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./hyprland.nix
-    ./lsp.nix
     ./nautilus.nix
     ./neovim.nix
     ./users.nix
