@@ -37,6 +37,9 @@
     taplo
     yaml-language-server
 
+    # Typesetting
+    tinymist
+
     # Other (not really LSP-ish)
     # "cronstrue"
     # yq

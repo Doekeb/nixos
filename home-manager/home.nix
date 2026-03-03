@@ -16,6 +16,8 @@
     ./nushell.nix
     ./rofi.nix
     ./slack.nix
+    ./typst.nix
+    ./zathura.nix
   ];
   home.username = "doeke";
   home.homeDirectory = "/home/doeke";
