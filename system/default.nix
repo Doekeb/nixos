@@ -20,15 +20,11 @@
     ./hyprland.nix
     ./nautilus.nix
     ./neovim.nix
+    ./stylix.nix
     ./users.nix
     ./zoom-us.nix
     ./zsh.nix
   ];
-
-  # stylix = {
-  #   enable = true;
-  #   base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
-  # };
 
   # home-manager = {
   #   extraSpecialArgs = { inherit inputs; };

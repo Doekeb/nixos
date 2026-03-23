@@ -16,6 +16,7 @@
     ./nushell.nix
     ./rofi.nix
     ./slack.nix
+    ./stylix.nix
     ./typst.nix
     ./zathura.nix
   ];
