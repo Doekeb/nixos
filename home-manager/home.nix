@@ -10,6 +10,7 @@
     ./clipse.nix
     ./firefox.nix
     ./fish.nix
+    ./fonts.nix
     ./htop.nix
     ./lsp.nix
     ./mongodb-compass.nix
