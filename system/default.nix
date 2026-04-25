@@ -85,7 +85,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.waybar.enable = true;
   programs.nix-ld.enable = true;
 
   # List packages installed in system profile. To search, run:

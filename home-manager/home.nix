@@ -18,6 +18,7 @@
     ./slack.nix
     ./stylix.nix
     ./typst.nix
+    ./waybar.nix
     ./zathura.nix
   ];
   home.username = "doeke";
