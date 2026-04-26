@@ -14,7 +14,6 @@
     # inputs.home-manager.nixosModules.default
     # inputs.stylix.nixosModules.stylix
     ./desktop.nix
-    ./fonts.nix
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./hyprland.nix
