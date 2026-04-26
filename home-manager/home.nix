@@ -12,6 +12,7 @@
     ./fish.nix
     ./fonts.nix
     ./htop.nix
+    ./kitty.nix
     ./lsp.nix
     ./mongodb-compass.nix
     ./nushell.nix
