@@ -19,6 +19,7 @@
     ./hyprland.nix
     ./nautilus.nix
     ./neovim.nix
+    ./printing.nix
     ./stylix.nix
     ./users.nix
     ./zoom-us.nix
@@ -32,6 +33,7 @@
   #   };
   # };
 
+  hardware.bluetooth.enable = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
