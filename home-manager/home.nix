@@ -4,6 +4,7 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   imports = [
+    ./bluetui.nix
     ./btop.nix
     ./cli-tools.nix
     ./cliphist.nix
@@ -16,6 +17,7 @@
     ./lsp.nix
     ./mongodb-compass.nix
     ./nushell.nix
+    ./overskride.nix
     ./rofi.nix
     ./slack.nix
     ./stylix.nix
