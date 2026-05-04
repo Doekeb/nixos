@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   stylix = {
     enable = true;
@@ -8,9 +8,21 @@
       # serif = config.stylix.fonts.monospace;
       # sansSerif = config.stylix.fonts.monospace;
       # emoji = config.stylix.fonts.monospace;
+      serif = {
+        package = pkgs.quicksand;
+        name = "Quicksand";
+      };
+      sansSerif = {
+        package = pkgs.noto-fonts;
+        name = "Noto Sans";
+      };
+      emoji = {
+        package = pkgs.quicksand;
+        name = "Quicksand";
+      };
       monospace = {
-        package = pkgs.nerd-fonts.open-dyslexic;
-        name = "OpenDyslexic Nerd Font";
+        package = pkgs.drafting-mono;
+        name = "Drafting Mono";
       };
     };
 
@@ -24,6 +36,7 @@
         firefoxGnomeTheme.enable = true;
       };
       gtk.enable = true;
+      # kitty.enable = true;
       waybar.enable = true;
     };
   };
