@@ -19,6 +19,7 @@
     ./hyprland.nix
     ./nautilus.nix
     ./neovim.nix
+    ./noctalia-shell.nix
     ./printing.nix
     ./stylix.nix
     ./users.nix
