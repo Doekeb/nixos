@@ -20,6 +20,7 @@
     ./nautilus.nix
     ./neovim.nix
     ./noctalia-shell.nix
+    ./power-profiles-daemon.nix
     ./printing.nix
     ./stylix.nix
     ./users.nix
