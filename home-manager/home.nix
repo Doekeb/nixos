@@ -16,6 +16,7 @@
     ./kitty.nix
     ./lsp.nix
     ./mongodb-compass.nix
+    ./noctalia-shell.nix
     ./nushell.nix
     ./overskride.nix
     ./rofi.nix
