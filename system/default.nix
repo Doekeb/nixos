@@ -23,6 +23,7 @@
     ./printing.nix
     ./stylix.nix
     ./users.nix
+    ./upower.nix
     ./zoom-us.nix
     ./zsh.nix
   ];
