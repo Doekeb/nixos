@@ -20,7 +20,6 @@
     ./hyprland.nix
     ./nautilus.nix
     ./neovim.nix
-    ./noctalia-shell.nix
     ./power-profiles-daemon.nix
     ./printing.nix
     ./stylix.nix
