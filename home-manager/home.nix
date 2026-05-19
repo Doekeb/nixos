@@ -21,6 +21,7 @@
     ./overskride.nix
     ./rofi.nix
     ./slack.nix
+    ./screenshot.nix
     ./stylix.nix
     ./typst.nix
     ./qgis.nix
