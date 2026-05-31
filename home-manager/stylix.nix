@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  colorscheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+in
 {
   stylix = {
     enable = true;
@@ -26,7 +29,7 @@
       };
     };
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+    base16Scheme = colorscheme;
 
     targets = {
       firefox = {
@@ -40,4 +43,7 @@
       waybar.enable = true;
     };
   };
+  # home.file = {
+  #   ".config/colorscheme.yaml".source = colorscheme;
+  # };
 }
