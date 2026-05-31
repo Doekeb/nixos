@@ -43,7 +43,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(ipc .. "media previous"), { locked = tr
 
 -- Zoom
 hl.bind(main_mod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(main_mod .. " + Z", hl.dsp.window.fullscreen({ action = "toggle" }))
+hl.bind(main_mod .. " + Z", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 
 -- Menu
 hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
