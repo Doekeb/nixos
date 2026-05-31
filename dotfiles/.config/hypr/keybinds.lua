@@ -5,7 +5,7 @@ local terminal = "kitty"
 local file_manager = "nautilus"
 local menu = "hyprlauncher"
 
-local main_mod = "SUPER" -- Sets "Windows" key as main modifier
+local main_mod = "SUPER"
 local ipc = "noctalia-shell ipc call "
 
 -- Move focus
@@ -42,7 +42,8 @@ hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. "media playPause"), { locked = t
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(ipc .. "media previous"), { locked = true })
 
 -- Zoom
-hl.bind(main_mod .. " + Z", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(main_mod .. " + F", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(main_mod .. " + Z", hl.dsp.window.fullscreen({ action = "toggle" }))
 
 -- Menu
 hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
@@ -51,6 +52,12 @@ hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
 hl.bind(main_mod .. " + V", hl.dsp.exec_cmd(ipc .. "launcher clipboard"))
 
 hl.bind(main_mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. "settings toggle"))
+
+-- Mouse move windows
+-- Move/resize windows with main_mod + LMB/RMB and dragging
+hl.bind(main_mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
+hl.bind(main_mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+hl.bind(main_mod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = true })
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(main_mod .. " + Q", hl.dsp.exec_cmd(terminal))
@@ -71,7 +78,3 @@ hl.bind(main_mod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 -- Scroll through existing workspaces with main_mod + scroll
 hl.bind(main_mod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(main_mod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
-
--- Move/resize windows with main_mod + LMB/RMB and dragging
-hl.bind(main_mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(main_mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
