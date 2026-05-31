@@ -4,9 +4,10 @@
     (qgis.override {
       extraPythonPackages =
         ps: with ps; [
-          numpy
-          geopandas
-          rasterio
+          duckdb
+          # numpy
+          # geopandas
+          # rasterio
         ];
     })
     # other packages
