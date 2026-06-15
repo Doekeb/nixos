@@ -1,6 +1,5 @@
----------------------
----- KEYBINDINGS ----
----------------------
+-- https://wiki.hypr.land/Configuring/Basics/Binds/
+
 local terminal = "kitty"
 local file_manager = "nautilus"
 local menu = "hyprlauncher"
@@ -69,7 +68,7 @@ hl.bind(
 )
 hl.bind(main_mod .. " + E", hl.dsp.exec_cmd(file_manager))
 hl.bind(main_mod .. " + P", hl.dsp.window.pseudo())
-hl.bind(main_mod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
+-- hl.bind(main_mod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Example special workspace (scratchpad)
 -- hl.bind(main_mod .. " + S", hl.dsp.workspace.toggle_special("magic"))
