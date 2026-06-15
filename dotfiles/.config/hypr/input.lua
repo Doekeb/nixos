@@ -25,6 +25,23 @@ hl.gesture({
 	action = "workspace",
 })
 
+local move_window = function(by)
+	return function()
+		hl.dispatch(hl.dsp.window.move({ workspace = hl.get_active_window().workspace.id + by }))
+	end
+end
+
+hl.gesture({
+	fingers = 4,
+	direction = "right",
+	action = move_window(-1),
+})
+hl.gesture({
+	fingers = 4,
+	direction = "left",
+	action = move_window(1),
+})
+
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
 hl.device({
