@@ -24,6 +24,7 @@
     ./printing.nix
     ./stylix.nix
     ./users.nix
+    ./usbutils.nix
     ./upower.nix
     ./zoom-us.nix
     ./zsh.nix
