@@ -5,7 +5,7 @@ local file_manager = "nautilus"
 local menu = "hyprlauncher"
 
 local main_mod = "SUPER"
-local ipc = "noctalia-shell ipc call "
+local ipc = "noctalia msg "
 
 -- Move focus
 hl.bind(main_mod .. " + h", hl.dsp.focus({ direction = "left" }))
@@ -27,17 +27,17 @@ for i = 1, 10 do
 end
 
 -- Volume and brightness
-hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume increase"), { locked = true, repeating = true })
-hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume decrease"), { locked = true, repeating = true })
-hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume muteOutput"), { locked = true, repeating = true })
-hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. "volume muteInput"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness increase"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness decrease"), { locked = true, repeating = true })
+hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"), { locked = true, repeating = true })
+hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd(ipc .. "volume-down"), { locked = true, repeating = true })
+hl.bind("XF86AudioMute", hl.dsp.exec_cmd(ipc .. "volume-mute"), { locked = true, repeating = true })
+hl.bind("XF86AudioMicMute", hl.dsp.exec_cmd(ipc .. "mic-mute"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd(ipc .. "brightness-up"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd(ipc .. "brightness-down"), { locked = true, repeating = true })
 
 -- Media keys
 hl.bind("XF86AudioNext", hl.dsp.exec_cmd(ipc .. "media next"), { locked = true })
-hl.bind("XF86AudioPause", hl.dsp.exec_cmd(ipc .. "media playPause"), { locked = true })
-hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. "media playPause"), { locked = true })
+hl.bind("XF86AudioPause", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
+hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(ipc .. "media previous"), { locked = true })
 
 -- Zoom
@@ -45,12 +45,12 @@ hl.bind(main_mod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(main_mod .. " + Z", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 
 -- Menu
-hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "launcher toggle"))
+hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 
 -- Clipboard manager
-hl.bind(main_mod .. " + V", hl.dsp.exec_cmd(ipc .. "launcher clipboard"))
+hl.bind(main_mod .. " + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 
-hl.bind(main_mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. "settings toggle"))
+hl.bind(main_mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 
 -- Mouse move windows
 -- Move/resize windows with main_mod + LMB/RMB and dragging
