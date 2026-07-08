@@ -16,7 +16,7 @@
     ./kitty.nix
     ./lsp.nix
     ./mongodb.nix
-    ./noctalia-shell.nix
+    ./noctalia.nix
     ./nushell.nix
     ./overskride.nix
     ./rofi.nix
