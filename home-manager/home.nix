@@ -20,7 +20,6 @@
     ./noctalia.nix
     ./nushell.nix
     ./overskride.nix
-    ./rofi.nix
     ./slack.nix
     ./screenshot.nix
     # ./stylix.nix
