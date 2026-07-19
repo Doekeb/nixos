@@ -40,7 +40,6 @@ in
       };
       gtk.enable = true;
       # kitty.enable = true;
-      waybar.enable = true;
     };
   };
   # home.file = {

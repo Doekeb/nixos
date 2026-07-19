@@ -22,7 +22,7 @@
     ./neovim.nix
     ./power-profiles-daemon.nix
     ./printing.nix
-    ./stylix.nix
+    # ./stylix.nix
     ./users.nix
     ./usbutils.nix
     ./upower.nix

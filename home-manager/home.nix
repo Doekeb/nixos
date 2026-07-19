@@ -12,6 +12,7 @@
     ./firefox.nix
     ./fish.nix
     ./fonts.nix
+    ./gtk.nix
     ./htop.nix
     ./kitty.nix
     ./lsp.nix
@@ -22,7 +23,7 @@
     ./rofi.nix
     ./slack.nix
     ./screenshot.nix
-    ./stylix.nix
+    # ./stylix.nix
     ./typst.nix
     ./qgis.nix
     ./zathura.nix
