@@ -6,7 +6,6 @@ order = [ "default" ]
     center = [ "workspaces" ]
     end = [
         "tray",
-        "session",
         "nightlight",
         "notifications",
         "caffeine",
@@ -22,7 +21,7 @@ order = [ "default" ]
     position = "bottom"
     radius = 0
     shadow = false
-    start = [ "launcher", "clipboard", "date", "clock" ]
+    start = [ "session", "launcher", "clipboard", "weather", "clock" ]
     widget_spacing = 10
 
 [control_center]
@@ -143,11 +142,12 @@ corner_radius_scale = 0.0
     [shell.panel]
     clipboard_position = "bottom_left"
     control_center_placement = "floating"
-    control_center_position = "bottom_right"
+    control_center_position = "auto"
+    open_near_click_control_center = true
     launcher_position = "bottom_left"
-    polkit_position = "bottom_right"
+    polkit_position = "bottom_left"
     session_placement = "floating"
-    session_position = "bottom_right"
+    session_position = "bottom_left"
     wallpaper_placement = "floating"
     wallpaper_position = "bottom_right"
 
@@ -193,10 +193,7 @@ show_label = false
 show_label = false
 
 [widget.clock]
-format = "{:%X}"
-
-[widget.date]
-format = "{:%A %e %B}"
+format = "{:%A %e %B  %X}"
 
 [widget.input_volume]
 show_label = false
