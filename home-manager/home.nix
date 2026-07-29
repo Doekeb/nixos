@@ -7,8 +7,6 @@
     ./bluetui.nix
     ./btop.nix
     ./cli-tools.nix
-    ./cliphist.nix
-    ./clipse.nix
     ./firefox.nix
     ./fish.nix
     ./fonts.nix
