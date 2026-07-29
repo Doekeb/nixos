@@ -1,5 +1,5 @@
 { config, ... }:
 {
-  home.file.".config/fish".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/dotfiles/.config/fish";
+  xdg.configFile."fish".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nixos/dotfiles/.config/fish";
 }

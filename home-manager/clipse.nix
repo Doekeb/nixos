@@ -5,6 +5,6 @@
     wl-clipboard
   ];
   # services.clipse.enable = true;
-  home.file.".config/clipse/config.json".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/dotfiles/.config/clipse/config.json";
+  xdg.configFile."clipse/config.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nixos/dotfiles/.config/clipse/config.json";
 }

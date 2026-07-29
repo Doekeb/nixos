@@ -10,6 +10,6 @@
   #   noctalia-shell
   #   wtype # auto-paste
   # ];
-  home.file.".config/noctalia".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/dotfiles/.config/noctalia";
+  xdg.configFile."noctalia".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nixos/dotfiles/.config/noctalia";
 }

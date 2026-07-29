@@ -42,7 +42,5 @@ in
       # kitty.enable = true;
     };
   };
-  # home.file = {
-  #   ".config/colorscheme.yaml".source = colorscheme;
-  # };
+  # xdg.configFile."colorscheme.yaml".source = colorscheme;
 }

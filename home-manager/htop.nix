@@ -3,6 +3,6 @@
   home.packages = with pkgs; [
     htop
   ];
-  home.file.".config/htop".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/nixos/dotfiles/.config/htop";
+  xdg.configFile."htop".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nixos/dotfiles/.config/htop";
 }
