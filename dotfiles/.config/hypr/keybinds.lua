@@ -50,7 +50,11 @@ hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 -- Clipboard manager
 hl.bind(main_mod .. " + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 
+-- Noctalia settings
 hl.bind(main_mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
+
+-- Screenshot
+hl.bind("PRINT", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
 
 -- Mouse move windows
 -- Move/resize windows with main_mod + LMB/RMB and dragging
