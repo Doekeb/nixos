@@ -1,0 +1,211 @@
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    capsule = false
+    center = [ "workspaces" ]
+    end = [
+        "tray",
+        "session",
+        "nightlight",
+        "notifications",
+        "caffeine",
+        "battery",
+        "network",
+        "bluetooth",
+        "volume",
+        "brightness",
+        "control-center"
+    ]
+    margin_edge = 0
+    margin_ends = 0
+    position = "bottom"
+    radius = 0
+    shadow = false
+    start = [ "launcher", "clipboard", "date", "clock" ]
+    widget_spacing = 10
+
+[control_center]
+sidebar_section = "none"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[dock]
+auto_hide = true
+cross_axis_padding = 0
+icon_size = 40
+item_spacing = 0
+launcher_position = "end"
+magnification = false
+main_axis_padding = 0
+margin_edge = 0
+radius = 0
+reserve_space = false
+show_dots = true
+
+[idle]
+behavior_order = [ "screen-off", "lock-and-suspend" ]
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 660.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 600.0
+
+[keybinds]
+down = [ "Down", "Ctrl+j" ]
+left = [ "Left", "Ctrl+h" ]
+right = [ "Right", "Ctrl+l" ]
+up = [ "Up", "Ctrl+k" ]
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 2
+widget_order = [ "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 961.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+
+[notification]
+background_opacity = 0.89999997988343239
+offset_x = 8
+position = "bottom_right"
+
+[osd]
+background_opacity = 0.89999997988343239
+offset_x = 8
+position = "bottom_right"
+position_vertical = "bottom_right"
+
+[plugins]
+enabled = [ "noctalia/wallhaven" ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+[shell]
+corner_radius_scale = 0.0
+
+    [shell.animation]
+    enabled = false
+    speed = 4.0
+
+    [shell.launcher]
+    compact = true
+    session_search = true
+
+    [shell.panel]
+    clipboard_position = "bottom_left"
+    control_center_placement = "floating"
+    control_center_position = "bottom_right"
+    launcher_position = "bottom_left"
+    polkit_position = "bottom_right"
+    session_placement = "floating"
+    session_position = "bottom_right"
+    wallpaper_placement = "floating"
+    wallpaper_position = "bottom_right"
+
+    [shell.screenshot]
+    confirm_region = true
+    directory = "~/Pictures/Screenshots"
+
+    [shell.shadow]
+    alpha = 0.29999999329447746
+    direction = "center"
+
+[theme]
+builtin = "Kanagawa"
+community_palette = "Kanagawa Kasumi"
+mode = "dark"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4" ]
+
+[wallpaper]
+fill_mode = "stretch"
+transition = [ "fade" ]
+transition_duration = 100
+
+    [wallpaper.default]
+    path = "/home/doeke/Pictures/Wallpapers/wallhaven-0pyd6p.jpg"
+
+    [wallpaper.last]
+    path = "/home/doeke/Pictures/Wallpapers/wallhaven-0pyd6p.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/doeke/Pictures/Wallpapers/wallhaven-0pyd6p.jpg"
+
+[weather]
+unit = "imperial"
+
+[widget.battery]
+display_mode = "graphic"
+show_label = false
+
+[widget.brightness]
+show_label = false
+
+[widget.clock]
+format = "{:%X}"
+
+[widget.date]
+format = "{:%A %e %B}"
+
+[widget.input_volume]
+show_label = false
+
+[widget.network]
+show_label = false
+
+[widget.volume]
+show_label = false
+
+[widget.wallhaven]
+type = "noctalia/wallhaven:wallhaven"
