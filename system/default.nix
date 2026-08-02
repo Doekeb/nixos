@@ -16,9 +16,9 @@
     ./cloudflare-warp.nix
     ./desktop.nix
     # Include the results of the hardware scan.
+    ./gvfs.nix
     ./hardware-configuration.nix
     ./hyprland.nix
-    ./nautilus.nix
     ./neovim.nix
     ./power-profiles-daemon.nix
     ./printing.nix

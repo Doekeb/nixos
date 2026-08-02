@@ -15,6 +15,7 @@
     ./kitty.nix
     ./lsp.nix
     ./mongodb.nix
+    ./nautilus.nix
     ./noctalia.nix
     ./nushell.nix
     ./overskride.nix
