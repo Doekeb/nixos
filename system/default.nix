@@ -14,8 +14,8 @@
     # inputs.home-manager.nixosModules.default
     # inputs.stylix.nixosModules.stylix
     ./cloudflare-warp.nix
-    ./desktop.nix
     # Include the results of the hardware scan.
+    ./greetd.nix
     ./gvfs.nix
     ./hardware-configuration.nix
     ./hyprland.nix

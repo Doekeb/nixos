@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   services.greetd = {
     enable = true;
@@ -7,12 +7,6 @@
         command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd start-hyprland";
         user = "greeter";
       };
-      # default_session = initial_session;
     };
   };
-  # environment.etc."greetd/environments".text = ''
-  #   hyprland
-  #   fish
-  #   bash
-  # '';
 }
