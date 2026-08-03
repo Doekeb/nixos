@@ -3,8 +3,8 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
-
-    configure.customLuaRC =
+    sideloadInitLua = true;
+    initLua =
       let
         grammarsPath = pkgs.symlinkJoin {
           name = "nvim-treesitter-grammars";

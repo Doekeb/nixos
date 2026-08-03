@@ -16,6 +16,7 @@
     ./lsp.nix
     ./mongodb.nix
     ./nautilus.nix
+    ./neovim.nix
     ./noctalia.nix
     ./nushell.nix
     ./overskride.nix

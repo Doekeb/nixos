@@ -19,7 +19,6 @@
     ./gvfs.nix
     ./hardware-configuration.nix
     ./hyprland.nix
-    ./neovim.nix
     ./power-profiles-daemon.nix
     ./printing.nix
     # ./stylix.nix
