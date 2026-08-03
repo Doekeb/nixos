@@ -21,9 +21,9 @@
     ./networking.nix
     ./power-profiles-daemon.nix
     ./printing.nix
+    ./usbutils.nix
     ./users.nix
     ./upower.nix
-    ./zoom-us.nix
     ./zsh.nix
   ];
 
