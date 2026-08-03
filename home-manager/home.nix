@@ -25,6 +25,7 @@
     # ./stylix.nix
     ./typst.nix
     ./qgis.nix
+    ./usbutils.nix
     ./zathura.nix
   ];
   home.username = "doeke";
