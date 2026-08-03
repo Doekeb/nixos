@@ -13,6 +13,7 @@
     ./gtk.nix
     ./htop.nix
     ./kitty.nix
+    ./libnotify.nix
     ./lsp.nix
     ./mongodb.nix
     ./nautilus.nix

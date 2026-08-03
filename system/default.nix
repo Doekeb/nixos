@@ -71,9 +71,6 @@
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     yadm
     xdg-utils # e.g. xdg-open to open links in default browser
-
-    libnotify # Provides notify-send
-
     tmux
     gitmux
     nwg-look # gtk theming
