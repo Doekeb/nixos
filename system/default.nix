@@ -11,11 +11,9 @@
 
 {
   imports = [
-    # inputs.home-manager.nixosModules.default
-    # inputs.stylix.nixosModules.stylix
     ./bluetooth.nix
     ./cloudflare-warp.nix
-    # Include the results of the hardware scan.
+    ./git.nix
     ./greetd.nix
     ./gvfs.nix
     ./hardware-configuration.nix
@@ -23,30 +21,16 @@
     ./networking.nix
     ./power-profiles-daemon.nix
     ./printing.nix
-    # ./stylix.nix
     ./users.nix
     ./upower.nix
     ./zoom-us.nix
     ./zsh.nix
   ];
 
-  # home-manager = {
-  #   extraSpecialArgs = { inherit inputs; };
-  #   users = {
-  #     "doeke" = import ./home.nix;
-  #   };
-  # };
-
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
-  # nix = {
-  #   package = pkgs.nixFlakes;
-  #   extraOptions = ''
-  #       experimental-features = nix-command flakes
-  #   '';
-  # };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -85,15 +69,8 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    # neovim
-    kdePackages.dolphin
     yadm
-    git
     xdg-utils # e.g. xdg-open to open links in default browser
-
-    # Notification daemon(s)
-    # dunst
-    mako
 
     libnotify # Provides notify-send
 
