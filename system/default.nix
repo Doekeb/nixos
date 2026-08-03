@@ -13,12 +13,14 @@
   imports = [
     # inputs.home-manager.nixosModules.default
     # inputs.stylix.nixosModules.stylix
+    ./bluetooth.nix
     ./cloudflare-warp.nix
     # Include the results of the hardware scan.
     ./greetd.nix
     ./gvfs.nix
     ./hardware-configuration.nix
     ./hyprland.nix
+    ./networking.nix
     ./power-profiles-daemon.nix
     ./printing.nix
     # ./stylix.nix
@@ -36,7 +38,6 @@
   #   };
   # };
 
-  hardware.bluetooth.enable = true;
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
@@ -51,16 +52,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "lemur-pro"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Detroit";
@@ -131,12 +122,6 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
