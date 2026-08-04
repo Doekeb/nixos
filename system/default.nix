@@ -10,6 +10,7 @@
     ./hyprland.nix
     ./locale.nix
     ./networking.nix
+    ./nix.nix
     ./power-profiles-daemon.nix
     ./printing.nix
     ./tmux.nix
@@ -19,16 +20,6 @@
     ./vim.nix
     ./zsh.nix
   ];
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
     brightnessctl # Control screen brightness
