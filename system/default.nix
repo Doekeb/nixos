@@ -34,7 +34,6 @@
   programs.nix-ld.enable = true;
 
   environment.systemPackages = with pkgs; [
-    yadm
     brightnessctl # Control screen brightness
     #  wget
 

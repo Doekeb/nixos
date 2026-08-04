@@ -27,6 +27,7 @@
     ./typst.nix
     ./qgis.nix
     ./xdg-utils.nix
+    ./yadm.nix
     ./zathura.nix
   ];
   home.username = "doeke";
