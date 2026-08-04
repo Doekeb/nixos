@@ -1,15 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
-
-{
+{ pkgs, ... }: {
   imports = [
     ./bluetooth.nix
     ./cloudflare-warp.nix
@@ -22,6 +11,7 @@
     ./networking.nix
     ./power-profiles-daemon.nix
     ./printing.nix
+    ./tmux.nix
     ./usbutils.nix
     ./users.nix
     ./upower.nix
@@ -42,15 +32,9 @@
 
   programs.nix-ld.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     yadm
-    xdg-utils # e.g. xdg-open to open links in default browser
-    tmux
-    gitmux
-    nwg-look # gtk theming
     brightnessctl # Control screen brightness
     #  wget
 
@@ -80,5 +64,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "25.11"; # Did you read the comment?
-
 }
