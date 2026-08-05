@@ -13,12 +13,12 @@
     ./nix.nix
     ./power-profiles-daemon.nix
     ./printing.nix
+    ./shells.nix
     ./tmux.nix
     ./usbutils.nix
-    ./users.nix
     ./upower.nix
+    ./users.nix
     ./vim.nix
-    ./zsh.nix
   ];
 
   # This value determines the NixOS release from which the default
