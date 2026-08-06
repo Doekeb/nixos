@@ -24,6 +24,7 @@
     ./slack.nix
     ./screenshot.nix
     # ./stylix.nix
+    ./tmux.nix
     ./typst.nix
     ./qgis.nix
     ./xdg-utils.nix

@@ -15,7 +15,6 @@
     ./printing.nix
     ./shells.nix
     ./steam.nix
-    ./tmux.nix
     ./usbutils.nix
     ./upower.nix
     ./users.nix
