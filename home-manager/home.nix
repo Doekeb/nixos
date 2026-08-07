@@ -17,7 +17,6 @@
     ./nautilus.nix
     ./neovim.nix
     ./noctalia.nix
-    ./overskride.nix
     ./slack.nix
     # ./stylix.nix
     ./tmux.nix
