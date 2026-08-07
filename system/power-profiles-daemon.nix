@@ -1,4 +1,4 @@
-# Needed for noctalia power profiles to work
+# Also turned on by noctalia nixos module
 { ... }:
 {
   services.power-profiles-daemon.enable = true;

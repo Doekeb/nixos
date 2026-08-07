@@ -102,7 +102,6 @@ widget_order = [ "lockscreen-login-box@eDP-1" ]
         show_caps_lock = true
         show_keyboard_layout = true
         show_login_button = true
-        show_password_hint = true
 
 [notification]
 background_opacity = 0.89999997988343239
@@ -137,7 +136,6 @@ corner_radius_scale = 0.0
 
     [shell.launcher]
     compact = true
-    session_search = true
 
     [shell.panel]
     clipboard_position = "bottom_left"

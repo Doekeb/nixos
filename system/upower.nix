@@ -1,4 +1,4 @@
-# Needed for noctalia battery status to work
+# Also turned on by noctalia nixos module
 { ... }:
 {
   services.upower.enable = true;

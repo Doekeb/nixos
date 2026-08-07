@@ -11,6 +11,7 @@
     ./locale.nix
     ./networking.nix
     ./nix.nix
+    ./noctalia.nix
     ./power-profiles-daemon.nix
     ./printing.nix
     ./shells.nix
