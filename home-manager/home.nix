@@ -4,7 +4,6 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   imports = [
-    ./bluetui.nix
     ./btop.nix
     ./cli-tools.nix
     ./firefox.nix
@@ -19,10 +18,8 @@
     ./nautilus.nix
     ./neovim.nix
     ./noctalia.nix
-    ./nushell.nix
     ./overskride.nix
     ./slack.nix
-    ./screenshot.nix
     # ./stylix.nix
     ./tmux.nix
     ./typst.nix

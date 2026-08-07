@@ -1,6 +1,5 @@
 { config, pkgs, ... }:
 {
-  # programs.kitty.enable = true;
   home.packages = with pkgs; [ kitty ];
 
   xdg.configFile."kitty".source =
