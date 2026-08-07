@@ -2,7 +2,6 @@
 
 local terminal = "kitty"
 local file_manager = "nautilus"
-local menu = "hyprlauncher"
 
 local main_mod = "SUPER"
 local ipc = "noctalia msg "
@@ -52,6 +51,9 @@ hl.bind(main_mod .. " + V", hl.dsp.exec_cmd(ipc .. "panel-toggle clipboard"))
 
 -- Noctalia settings
 hl.bind(main_mod .. " + COMMA", hl.dsp.exec_cmd(ipc .. "settings-toggle"))
+
+-- Noctalia session manager
+hl.bind(main_mod .. " + ESCAPE", hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
 
 -- Screenshot
 hl.bind("PRINT", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
