@@ -1,0 +1,9 @@
+-- local start_typst_server = function()
+--   vim.print("HERE")
+--   local bufnr = vim.api.nvim_get_current_buf()
+--   local bufname = vim.api.nvim_buf_get_name(bufnr)
+--   vim.print(bufname)
+--   -- io.popen("typst watch " .. bufname)
+--   vim.print("END")
+-- end
+-- vim.keymap.set("n", "<leader>st", start_typst_server, { noremap = true, silent = true })

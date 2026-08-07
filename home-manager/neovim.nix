@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
   programs.neovim = {
     enable = true;
@@ -25,4 +25,6 @@
         vim.opt.runtimepath:append("${grammarsPath}")
       '';
   };
+  xdg.configFile."nvim".source =
+    config.lib.file.mkOutOfStoreSymlink "${config.xdg.configHome}/nixos/dotfiles/.config/nvim";
 }
