@@ -4,26 +4,63 @@ local terminal = "kitty"
 local file_manager = "nautilus"
 
 local main_mod = "SUPER"
+local window_mod = "SUPER + SUPER_L"
 local ipc = "noctalia msg "
 
--- Move focus
-hl.bind(main_mod .. " + h", hl.dsp.focus({ direction = "left" }))
-hl.bind(main_mod .. " + l", hl.dsp.focus({ direction = "right" }))
-hl.bind(main_mod .. " + k", hl.dsp.focus({ direction = "up" }))
-hl.bind(main_mod .. " + j", hl.dsp.focus({ direction = "down" }))
+local bind_window_maps = function(mods)
+	local mod_string = ""
+	for _, val in ipairs(mods) do
+		mod_string = mod_string .. val .. " + "
+	end
 
--- Move windows
-hl.bind(main_mod .. " + SHIFT + h", hl.dsp.window.move({ direction = "left" }))
-hl.bind(main_mod .. " + SHIFT + l", hl.dsp.window.move({ direction = "right" }))
-hl.bind(main_mod .. " + SHIFT + k", hl.dsp.window.move({ direction = "up" }))
-hl.bind(main_mod .. " + SHIFT + j", hl.dsp.window.move({ direction = "down" }))
+	-- Move focus
+	local focus_mod = mod_string
+	hl.bind(focus_mod .. "h", hl.dsp.focus({ direction = "left" }))
+	hl.bind(focus_mod .. "l", hl.dsp.focus({ direction = "right" }))
+	hl.bind(focus_mod .. "k", hl.dsp.focus({ direction = "up" }))
+	hl.bind(focus_mod .. "j", hl.dsp.focus({ direction = "down" }))
 
--- Switch workspaces
-for i = 1, 10 do
-	local key = i % 10 -- 10 maps to key 0
-	hl.bind(main_mod .. " + " .. key, hl.dsp.focus({ workspace = i }))
-	hl.bind(main_mod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+	-- Move windows
+	local move_mod = mod_string .. "SHIFT + "
+	hl.bind(move_mod .. " + h", hl.dsp.window.move({ direction = "left" }))
+	hl.bind(move_mod .. " + l", hl.dsp.window.move({ direction = "right" }))
+	hl.bind(move_mod .. " + k", hl.dsp.window.move({ direction = "up" }))
+	hl.bind(move_mod .. " + j", hl.dsp.window.move({ direction = "down" }))
+	-- TODO: Wrap to start/end of next workspace
+
+	-- Move workspaces
+	local workspace_mod = mod_string .. "CTRL + "
+	hl.bind(workspace_mod .. " + h", hl.dsp.window.move({ workspace = "-1" }))
+	hl.bind(workspace_mod .. " + l", hl.dsp.window.move({ workspace = "+1" }))
+
+	-- Workspaces by index
+	for i = 1, 10 do
+		local key = i % 10 -- 10 maps to key 0
+		hl.bind(mod_string .. key, hl.dsp.focus({ workspace = i }))
+		hl.bind(workspace_mod .. key, hl.dsp.window.move({ workspace = i }))
+		hl.bind(move_mod .. key, hl.dsp.window.move({ workspace = i }))
+	end
 end
+
+bind_window_maps({ main_mod })
+
+-- Switch to window submap
+-- TODO: Better way to do theme/color/visual-indicator
+hl.bind(window_mod, function()
+	hl.config({ general = { col = { active_border = "#D27E99" } } })
+end, { release = true })
+hl.bind(window_mod, hl.dsp.submap("window"), { release = true })
+hl.define_submap("window", function()
+	bind_window_maps({})
+	hl.bind("ESCAPE", function()
+		hl.config({ general = { col = { active_border = "#957FB8" } } })
+	end, { release = true })
+	hl.bind(window_mod, function()
+		hl.config({ general = { col = { active_border = "#957FB8" } } })
+	end, { release = true })
+	hl.bind("ESCAPE", hl.dsp.submap("reset"))
+	hl.bind(window_mod, hl.dsp.submap("reset"))
+end)
 
 -- Volume and brightness
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(ipc .. "volume-up"), { locked = true, repeating = true })
@@ -66,12 +103,7 @@ hl.bind(main_mod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = tr
 
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(main_mod .. " + Q", hl.dsp.exec_cmd(terminal))
-local closeWindowBind = hl.bind(main_mod .. " + C", hl.dsp.window.close())
--- closeWindowBind:set_enabled(false)
-hl.bind(
-	main_mod .. " + M",
-	hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'")
-)
+hl.bind(main_mod .. " + W", hl.dsp.window.close())
 hl.bind(main_mod .. " + E", hl.dsp.exec_cmd(file_manager))
 hl.bind(main_mod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(main_mod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
