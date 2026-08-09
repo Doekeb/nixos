@@ -4,7 +4,7 @@
     ./boot.nix
     ./cloudflare-warp.nix
     ./git.nix
-    ./greetd.nix
+    # ./greetd.nix
     ./gvfs.nix
     ./hardware-configuration.nix
     ./hyprland.nix
