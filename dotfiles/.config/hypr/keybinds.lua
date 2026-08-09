@@ -1,4 +1,5 @@
 -- https://wiki.hypr.land/Configuring/Basics/Binds/
+local colorscheme = require("colorscheme")
 
 local terminal = "kitty"
 local file_manager = "nautilus"
@@ -61,16 +62,16 @@ bind_window_maps({ main_mod })
 -- Switch to window submap
 -- TODO: Better way to do theme/color/visual-indicator
 hl.bind(window_mod, function()
-	hl.config({ general = { col = { active_border = "#D27E99" } } })
+	hl.config({ general = { col = { active_border = colorscheme.base0F } } })
 end, { release = true })
 hl.bind(window_mod, hl.dsp.submap("window"), { release = true })
 hl.define_submap("window", function()
 	bind_window_maps({})
 	hl.bind("ESCAPE", function()
-		hl.config({ general = { col = { active_border = "#957FB8" } } })
+		hl.config({ general = { col = { active_border = colorscheme.base0E } } })
 	end, { release = true })
 	hl.bind(window_mod, function()
-		hl.config({ general = { col = { active_border = "#957FB8" } } })
+		hl.config({ general = { col = { active_border = colorscheme.base0E } } })
 	end, { release = true })
 	hl.bind("ESCAPE", hl.dsp.submap("reset"))
 	hl.bind(window_mod, hl.dsp.submap("reset"))
