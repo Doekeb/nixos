@@ -13,7 +13,10 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # STABLE
     # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
     # home-manager.url = "github:nix-community/home-manager/release-25.11";
@@ -25,6 +28,7 @@
       nixpkgs,
       home-manager,
       stylix,
+      noctalia-greeter,
       ...
     }@inputs:
     let
@@ -38,6 +42,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             stylix.nixosModules.stylix
+            noctalia-greeter.nixosModules.default
             ./system
           ];
         };
