@@ -40,6 +40,20 @@ local bind_window_maps = function(mods)
 		hl.bind(workspace_mod .. key, hl.dsp.window.move({ workspace = i }))
 		hl.bind(move_mod .. key, hl.dsp.window.move({ workspace = i }))
 	end
+
+	-- Float, Zoom, Pseudo
+	hl.bind(mod_string .. "f", hl.dsp.window.float({ action = "toggle" }))
+	hl.bind(mod_string .. "z", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
+	hl.bind(mod_string .. "p", hl.dsp.window.pseudo())
+
+	-- Close, kill
+	hl.bind(mod_string .. "w", hl.dsp.window.close())
+	hl.bind(mod_string .. "x", hl.dsp.window.close())
+
+	-- Mouse move and resize
+	hl.bind(mod_string .. "mouse:272", hl.dsp.window.drag(), { mouse = true })
+	hl.bind(mod_string .. "mouse:273", hl.dsp.window.resize(), { mouse = true })
+	hl.bind(mod_string .. "CTRL + mouse:272", hl.dsp.window.resize(), { mouse = true })
 end
 
 bind_window_maps({ main_mod })
@@ -76,10 +90,6 @@ hl.bind("XF86AudioPause", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = tru
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd(ipc .. "media toggle"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd(ipc .. "media previous"), { locked = true })
 
--- Zoom
-hl.bind(main_mod .. " + F", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(main_mod .. " + Z", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
-
 -- Menu
 hl.bind(main_mod .. " + SPACE", hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 
@@ -95,17 +105,9 @@ hl.bind(main_mod .. " + ESCAPE", hl.dsp.exec_cmd(ipc .. "panel-toggle session"))
 -- Screenshot
 hl.bind("PRINT", hl.dsp.exec_cmd(ipc .. "screenshot-region"))
 
--- Mouse move windows
--- Move/resize windows with main_mod + LMB/RMB and dragging
-hl.bind(main_mod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
-hl.bind(main_mod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
-hl.bind(main_mod .. " + SHIFT + mouse:272", hl.dsp.window.resize(), { mouse = true })
-
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(main_mod .. " + Q", hl.dsp.exec_cmd(terminal))
-hl.bind(main_mod .. " + W", hl.dsp.window.close())
 hl.bind(main_mod .. " + E", hl.dsp.exec_cmd(file_manager))
-hl.bind(main_mod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(main_mod .. " + J", hl.dsp.layout("togglesplit")) -- dwindle only
 
 -- Example special workspace (scratchpad)
