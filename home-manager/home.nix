@@ -9,7 +9,6 @@
     ./fish.nix
     ./fonts.nix
     ./gtk.nix
-    ./htop.nix
     ./hypr.nix
     ./kitty.nix
     ./libnotify.nix
