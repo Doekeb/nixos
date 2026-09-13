@@ -3,5 +3,8 @@
   "theme": "dark",
   "defaultProvider": "opencode",
   "defaultModel": "kimi-k2.6",
-  "defaultThinkingLevel": "medium"
+  "defaultThinkingLevel": "medium",
+  "packages": [
+    "npm:pi-vim"
+  ]
 }
