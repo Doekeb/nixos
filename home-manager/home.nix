@@ -18,6 +18,7 @@
     ./neovim.nix
     ./noctalia.nix
     ./opencode.nix
+    ./pi-coding-agent.nix
     ./slack.nix
     # ./stylix.nix
     ./tmux.nix
