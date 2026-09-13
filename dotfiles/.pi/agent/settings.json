@@ -4,7 +4,5 @@
   "defaultProvider": "opencode",
   "defaultModel": "kimi-k2.6",
   "defaultThinkingLevel": "medium",
-  "packages": [
-    "npm:pi-vim"
-  ]
+  "packages": ["npm:pi-vim"]
 }
