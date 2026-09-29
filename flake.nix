@@ -43,7 +43,7 @@
           modules = [
             stylix.nixosModules.stylix
             noctalia-greeter.nixosModules.default
-            ./system
+            ./lemur-pro
           ];
         };
       };
