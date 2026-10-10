@@ -1,18 +1,8 @@
 return {
   "lewis6991/gitsigns.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    { "purarue/gitsigns-yadm.nvim", opts = { shell_timeout_ms = 1000 } },
-  },
+  dependencies = { "nvim-lua/plenary.nvim" },
   config = function()
     require("gitsigns").setup({
-      _on_attach_pre = function(bufnr, callback)
-        local ft = vim.bo[bufnr].filetype
-        if string.match(ft, "git%w+") then
-          return callback()
-        end
-        require("gitsigns-yadm").yadm_signs(callback, { bufnr = bufnr })
-      end,
       numhl = true,
       current_line_blame_opts = { delay = 0 },
       on_attach = function(bufnr)
@@ -52,9 +42,9 @@ return {
         end)
         map("n", "<leader>hS", gitsigns.stage_buffer)
         map("n", "<leader>hR", gitsigns.reset_buffer)
+        map("n", "<leader>hp", gitsigns.preview_hunk)
 
         -- Actions I don't like
-        -- map("n", "<leader>hp", gitsigns.preview_hunk)
         -- map("n", "<leader>hi", gitsigns.preview_hunk_inline)
         -- map("n", "<leader>hb", function()
         --   gitsigns.blame_line({ full = true })
