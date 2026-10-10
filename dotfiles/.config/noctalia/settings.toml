@@ -1,3 +1,6 @@
+[audio]
+enable_overdrive = true
+
 [bar]
 order = [ "default" ]
 
@@ -6,6 +9,7 @@ order = [ "default" ]
     center = [ "workspaces" ]
     end = [
         "tray",
+        "warp",
         "nightlight",
         "notifications",
         "caffeine",
@@ -114,8 +118,12 @@ offset_x = 8
 position = "bottom_right"
 position_vertical = "bottom_right"
 
+[plugin_settings."levi/warp"]
+panel_placement = "floating"
+panel_position = "bottom_right"
+
 [plugins]
-enabled = [ "noctalia/wallhaven" ]
+enabled = [ "noctalia/wallhaven", "levi/warp" ]
 
     [[plugins.source]]
     kind = "git"
@@ -199,8 +207,14 @@ show_label = false
 [widget.network]
 show_label = false
 
+[widget.tray]
+hidden = [ "Zero Trust Client" ]
+
 [widget.volume]
 show_label = false
 
 [widget.wallhaven]
 type = "noctalia/wallhaven:wallhaven"
+
+[widget.warp]
+type = "levi/warp:warp"
