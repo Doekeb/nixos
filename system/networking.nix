@@ -1,5 +1,5 @@
-{ ... }: {
-  networking.hostName = "lemur-pro"; # Define your hostname.
+{ hostname, ... }: {
+  networking.hostName = hostname; # Define your hostname.
 
   # Enable networking
   # Also turned on by noctalia nixos module
