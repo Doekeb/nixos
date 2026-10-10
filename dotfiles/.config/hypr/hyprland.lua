@@ -46,3 +46,11 @@ hl.config({
 		fullscreen_on_one_column = true,
 	},
 })
+
+-- https://wiki.hypr.land/Configuring/Basics/Variables/#ecosystem
+hl.config({
+	ecosystem = {
+		no_update_news = true,
+		no_donation_nag = true,
+	},
+})
