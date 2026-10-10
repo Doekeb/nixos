@@ -9,6 +9,7 @@
     ./firefox.nix
     ./fish.nix
     ./fonts.nix
+    ./gh.nix
     ./git.nix
     ./gtk.nix
     ./hypr.nix
