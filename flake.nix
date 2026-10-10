@@ -1,34 +1,34 @@
 # /etc/nixos/flake.nix
 {
-  description = "flake for lemur-pro";
+  description = "Doeke's flake";
 
   inputs = {
-    # UNSTABLE
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    }; # TODO: install from nixpkgs instead
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     stylix = {
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    # STABLE
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    # home-manager.url = "github:nix-community/home-manager/release-25.11";
-    # stylix.url = "github:nix-community/stylix/release-25.11";
   };
 
   outputs =
     {
-      nixpkgs,
       home-manager,
-      stylix,
+      nixpkgs,
       noctalia-greeter,
+      sops-nix,
+      stylix,
       ...
     }@inputs:
     let
@@ -38,12 +38,29 @@
     {
       nixosConfigurations = {
         lemur-pro = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
+          system = system;
+          specialArgs = {
+            inherit inputs;
+            hostname = "lemur-pro";
+          };
           modules = [
-            stylix.nixosModules.stylix
             noctalia-greeter.nixosModules.default
+            stylix.nixosModules.stylix
+            sops-nix.nixosModules.sops
             ./lemur-pro
+          ];
+        };
+        framework13-pro = nixpkgs.lib.nixosSystem {
+          system = system;
+          specialArgs = {
+            inherit inputs;
+            hostname = "framework13-pro";
+          };
+          modules = [
+            noctalia-greeter.nixosModules.default
+            stylix.nixosModules.stylix
+            sops-nix.nixosModules.sops
+            ./framework13-pro
           ];
         };
       };
@@ -52,6 +69,16 @@
           inherit pkgs;
           extraSpecialArgs = { inherit inputs; };
           modules = [
+            sops-nix.homeManagerModules.sops
+            stylix.homeModules.stylix
+            ./home-manager/home.nix
+          ];
+        };
+        "doeke@framework13-pro" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
+          modules = [
+            sops-nix.homeManagerModules.sops
             stylix.homeModules.stylix
             ./home-manager/home.nix
           ];

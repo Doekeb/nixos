@@ -3,11 +3,13 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   imports = [
+    ./age.nix
     ./btop.nix
     ./cli-tools.nix
     ./firefox.nix
     ./fish.nix
     ./fonts.nix
+    ./git.nix
     ./gtk.nix
     ./hypr.nix
     ./kitty.nix
@@ -20,6 +22,7 @@
     ./opencode.nix
     ./pi-coding-agent.nix
     ./slack.nix
+    ./sops-nix.nix
     # ./stylix.nix
     ./tmux.nix
     ./typst.nix
@@ -76,9 +79,9 @@
   #
   #  /etc/profiles/per-user/doeke/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
-  };
+  # home.sessionVariables = {
+  #   EDITOR = "nvim";
+  # };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
