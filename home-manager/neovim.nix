@@ -2,7 +2,6 @@
 {
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
     sideloadInitLua = true;
     initLua =
       let
