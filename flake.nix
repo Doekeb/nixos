@@ -16,10 +16,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    stylix = {
-      url = "github:nix-community/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
@@ -28,7 +24,6 @@
       nixpkgs,
       noctalia-greeter,
       sops-nix,
-      stylix,
       ...
     }@inputs:
     let
@@ -45,7 +40,6 @@
           };
           modules = [
             noctalia-greeter.nixosModules.default
-            stylix.nixosModules.stylix
             sops-nix.nixosModules.sops
             ./lemur-pro
           ];
@@ -58,7 +52,6 @@
           };
           modules = [
             noctalia-greeter.nixosModules.default
-            stylix.nixosModules.stylix
             sops-nix.nixosModules.sops
             ./framework13-pro
           ];
@@ -70,7 +63,6 @@
           extraSpecialArgs = { inherit inputs; };
           modules = [
             sops-nix.homeManagerModules.sops
-            stylix.homeModules.stylix
             ./home-manager/home.nix
           ];
         };
@@ -79,7 +71,6 @@
           extraSpecialArgs = { inherit inputs; };
           modules = [
             sops-nix.homeManagerModules.sops
-            stylix.homeModules.stylix
             ./home-manager/home.nix
           ];
         };

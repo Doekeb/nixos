@@ -24,7 +24,6 @@
     ./pi-coding-agent.nix
     ./slack.nix
     ./sops-nix.nix
-    # ./stylix.nix
     ./tmux.nix
     ./typst.nix
     ./qgis.nix
