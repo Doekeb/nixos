@@ -27,6 +27,7 @@
     ./tmux.nix
     ./typst.nix
     ./qgis.nix
+    ./wl-clipboard.nix
     ./xdg-utils.nix
     ./zathura.nix
   ];
