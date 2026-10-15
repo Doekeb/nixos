@@ -2,22 +2,20 @@
 {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
-    # nerd-fonts.bigblue-terminal
-    drafting-mono
-    font-awesome
+    libre-baskerville
     nerd-fonts.fira-code
-    nerd-fonts.monofur
-    nerd-fonts.open-dyslexic
-    nerd-fonts.roboto-mono
-    nerd-fonts.space-mono
+    # nerd-fonts.monofur
+    # nerd-fonts.roboto-mono
     noto-fonts
     quicksand
-    # nerd-fonts.jetbrains-mono
   ];
   fonts.fontconfig.defaultFonts = {
-    serif = [ "Quicksand" ];
+    serif = [ "LibreBaskerville" ];
     sansSerif = [ "Quicksand" ];
-    emoji = [ "Quicksand" ];
-    monospace = [ "Drafting Mono" ];
+    emoji = [ "Noto Color Emoji" ];
+    # monospace = [ "Monofur Nerd Font" ]; # 57 lines # Decent...
+    monospace = [ "FiraCode Nerd Font Mono" ]; # 45 lines # Decent...
+    # monospace = [ "RobotoMono Nerd Font" ]; # 43 lines Not bad, still a little spacy...
+
   };
 }
