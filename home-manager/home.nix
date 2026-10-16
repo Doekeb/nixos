@@ -4,6 +4,7 @@
   # manage.
   imports = [
     ./age.nix
+    ./awscli.nix
     ./btop.nix
     ./cli-tools.nix
     ./firefox.nix
