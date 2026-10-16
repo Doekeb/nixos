@@ -1,5 +1,8 @@
+config_version = 14
+
 [audio]
 enable_overdrive = true
+enable_sounds = false
 
 [bar]
 order = [ "default" ]
@@ -18,6 +21,7 @@ order = [ "default" ]
         "bluetooth",
         "volume",
         "brightness",
+        "wallpaper",
         "control-center"
     ]
     margin_edge = 0
@@ -137,6 +141,7 @@ enabled = [ "noctalia/wallhaven", "levi/warp" ]
 
 [shell]
 corner_radius_scale = 0.0
+polkit_agent = true
 
     [shell.animation]
     enabled = false
@@ -158,8 +163,11 @@ corner_radius_scale = 0.0
     wallpaper_position = "bottom_right"
 
     [shell.screenshot]
+    annotate = true
     confirm_region = true
-    directory = "~/Pictures/Screenshots"
+    directory = "~/screenshots"
+    save_to_file = false
+    skip_annotate_on_copy_save = true
 
     [shell.shadow]
     alpha = 0.29999999329447746
@@ -167,26 +175,29 @@ corner_radius_scale = 0.0
 
 [theme]
 builtin = "Kanagawa"
-community_palette = "Kanagawa Kasumi"
 mode = "dark"
+source = "builtin"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "btop", "gtk3", "gtk4" ]
+    builtin_ids = [ "gtk3", "gtk4" ]
 
 [wallpaper]
-fill_mode = "stretch"
+directory = "~/wallpapers"
+directory_dark = "~/wallpapers"
+directory_light = "~/wallpapers"
+fill_mode = "span"
 transition = [ "fade" ]
 transition_duration = 100
 
     [wallpaper.default]
-    path = "/home/doeke/Pictures/Wallpapers/wallhaven-0pyd6p.jpg"
+    path = "/home/doeke/wallpapers/wallhaven-0pyd6p.jpg"
 
     [wallpaper.last]
-    path = "/home/doeke/Pictures/Wallpapers/wallhaven-0pyd6p.jpg"
+    path = "/home/doeke/wallpapers/wallhaven-0pyd6p.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/doeke/Pictures/Wallpapers/wallhaven-0pyd6p.jpg"
+    path = "/home/doeke/wallpapers/wallhaven-0pyd6p.jpg"
 
 [weather]
 unit = "imperial"
@@ -208,7 +219,8 @@ show_label = false
 show_label = false
 
 [widget.tray]
-hidden = [ "Zero Trust Client" ]
+detached_panel = true
+hidden = [ "slack", "Warp-taskbar" ]
 
 [widget.volume]
 show_label = false
