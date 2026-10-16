@@ -3,6 +3,7 @@
     ./bluetooth.nix
     ./boot.nix
     ./cloudflare-warp.nix
+    ./docker.nix
     ./git.nix
     ./gvfs.nix
     ./hyprland.nix
