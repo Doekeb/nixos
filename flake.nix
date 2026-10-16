@@ -8,10 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    noctalia-greeter = {
-      url = "github:noctalia-dev/noctalia-greeter";
-      inputs.nixpkgs.follows = "nixpkgs";
-    }; # TODO: install from nixpkgs instead
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +18,6 @@
     {
       home-manager,
       nixpkgs,
-      noctalia-greeter,
       sops-nix,
       ...
     }@inputs:
@@ -39,7 +34,6 @@
             hostname = "lemur-pro";
           };
           modules = [
-            noctalia-greeter.nixosModules.default
             sops-nix.nixosModules.sops
             ./lemur-pro
           ];
@@ -51,7 +45,6 @@
             hostname = "framework13-pro";
           };
           modules = [
-            noctalia-greeter.nixosModules.default
             sops-nix.nixosModules.sops
             ./framework13-pro
           ];
