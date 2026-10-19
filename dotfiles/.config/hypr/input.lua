@@ -15,6 +15,9 @@ hl.config({
 
 		touchpad = {
 			natural_scroll = true,
+			clickfinger_behavior = true,
+			-- tap_to_click = false,
+			tap_and_drag = false,
 		},
 	},
 })
@@ -23,6 +26,14 @@ hl.gesture({
 	fingers = 3,
 	direction = "horizontal",
 	action = "workspace",
+})
+
+hl.gesture({
+	fingers = 3,
+	direction = "pinch",
+	action = "cursor_zoom",
+	zoom_level = 1,
+	mode = "live",
 })
 
 local move_window = function(by)
@@ -41,6 +52,11 @@ hl.gesture({
 	direction = "left",
 	action = move_window(1),
 })
+-- hl.gesture({
+-- 	fingers = 4,
+-- 	direction = "horizontal",
+-- 	action = "move",
+-- })
 
 -- Example per-device config
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
