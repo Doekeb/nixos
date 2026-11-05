@@ -8,6 +8,7 @@
     ./gvfs.nix
     ./hyprland.nix
     ./locale.nix
+    ./localsend.nix
     ./networking.nix
     ./nix.nix
     ./noctalia.nix
