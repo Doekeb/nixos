@@ -6,7 +6,7 @@ keys:
   - &doeke_framework13-pro age1v0admhllsez4xxe3x7jukdajqhqznjp8xs5lmql2f5r2624pafzsfehy89
   # - &admin_bob age12zlz6lvcdk6eqaewfylg35w0syh58sm7gh53q5vvn7hd7c6nngyseftjxl
 creation_rules:
-  - path_regex: home-manager/secrets.yaml
+  - path_regex: ^home-manager/secrets/.*$
     key_groups:
     - age:
       - *doeke_framework13-pro
