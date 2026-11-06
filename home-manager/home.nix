@@ -30,6 +30,7 @@
     ./qgis.nix
     ./wl-clipboard.nix
     ./xdg-utils.nix
+    ./yazi.nix
     ./zathura.nix
   ];
   home.username = "doeke";
