@@ -1,6 +1,6 @@
 return {
   "nickjvandyke/opencode.nvim",
-  version = "*", -- Latest stable release
+  -- version = "*", -- Latest stable release
   config = function()
     local opencode = require("opencode")
     local start_opencode = function(where)
@@ -12,7 +12,7 @@ return {
         new_pane_id = result[1]
       end
 
-      local cmd = { "tmux", "send-keys", "-t", new_pane_id, "'" .. "opencode --port" .. "'", "ENTER" }
+      local cmd = { "tmux", "send-keys", "-t", new_pane_id, "'" .. "opencode" .. "'", "ENTER" }
       vim.fn.system(table.concat(cmd, " "))
     end
     ---@type opencode.Opts
